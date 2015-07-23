@@ -1,0 +1,47 @@
+.my-message, .your-message {
+  width: 250px;
+  border: 1px solid;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border-color: rosybrown;
+  background: blanchedalmond;
+}
+
+.your-message {
+  float: left;
+}
+
+.my-message {
+  float: right;
+}
+
+cite {
+  float: right;
+}
+
+p {
+  width: 230px;
+  margin: auto;
+}
+
+
+.list {
+  background: seashell;
+  height:350px;
+  width: inherit;
+  word-wrap: break-word;
+  overflow-y: scroll;
+}
+
+.row{
+  margin-top: 100px;
+}
+
+.chat{
+  border: 3px solid #000000;
+  border-radius: 7px;
+}
+
+.your-message p{
+  color: darkgreen;
+}

@@ -1,0 +1,22 @@
+<div class="row">
+  <% 3.times do |i| %>
+      <% i += 1 %>
+      <div class="form col-md-4" id="user_<%= i %>" >
+        <%= form_for(@message, remote: true) do |f| %>
+
+            <div class="chat">
+              <div class="list container" id="<%= i %>" data-userId="<%= i %>"></div>
+              <div class="input-group">
+                <%= f.text_field :body, class: 'form-control', placeholder: "User #{i}..."%>
+                <%= f.hidden_field :user_id, value: i %>
+                <%= f.hidden_field :user_name, value: @user_names[i-1] %>
+                <span class="input-group-btn">
+                  <%= f.submit class: 'btn btn-primary', value: 'Go!' %>
+                </span>
+              </div>
+            </div>
+
+        <% end %>
+      </div>
+  <% end %>
+</div>
