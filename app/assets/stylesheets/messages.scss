@@ -1,10 +1,8 @@
 .my-message, .your-message {
   width: 250px;
-  border: 1px solid;
-  border-radius: 10px;
+//  word-break: break-all;
+
   margin-bottom: 10px;
-  border-color: rosybrown;
-  background: blanchedalmond;
 }
 
 .your-message {
@@ -15,13 +13,26 @@
   float: right;
 }
 
-cite {
+.my-message cite {
   float: right;
 }
 
+.my-message footer{
+  float: right;
+}
 p {
-  width: 230px;
+  display: inline-block;
   margin: auto;
+  border: 1px solid;
+  border-radius: 7px;
+  background: blanchedalmond;
+  border-color: rosybrown;
+  padding: 5px;
+  word-break: break-all;
+}
+
+.my-message p{
+  float: right;
 }
 
 
@@ -29,7 +40,6 @@ p {
   background: seashell;
   height:350px;
   width: inherit;
-  word-wrap: break-word;
   overflow-y: scroll;
 }
 
