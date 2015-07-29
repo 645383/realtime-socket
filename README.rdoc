@@ -1,4 +1,4 @@
 == README
 
-bundle
+bundle\n
 rails s
