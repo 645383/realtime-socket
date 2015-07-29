@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
-//= require socket.io
+//= require websocket_rails/main
 //= require_tree .

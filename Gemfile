@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
-gem 'realtime'
 gem 'redis'
-gem 'socket.io-rails'
+gem 'websocket-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

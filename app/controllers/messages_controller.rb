@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  # include WebsocketRails::BaseController
 
   def new
     @message = Message.new
@@ -9,7 +10,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
 
     if @message.save
-      $redis.publish 'realtime_msg', {msg: @message.body, time: @message.created_at.strftime("%Y/%m/%d - %H:%M:%S"), userId: message_params[:user_id], userName: params[:message][:user_name], recipient_user_ids: [1, 2, 3]}.to_json
+      WebsocketRails[:chat].trigger 'new', @message.body
     end
 
     respond_to do |format|
