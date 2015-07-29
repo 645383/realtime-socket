@@ -1,5 +1,7 @@
 == README
 
+start node server from https://github.com/645383/realtime-server-node
+
 bundle
 
 rails s
