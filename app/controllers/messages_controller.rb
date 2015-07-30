@@ -9,12 +9,9 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
 
-    if @message.save
-      WebsocketRails[:chat].trigger 'new', @message.body
-    end
-
     respond_to do |format|
       if @message.save
+        WebsocketRails[:chat].trigger 'new', body
         format.json {render :show, status: :created}
       else
         format.json { render json: @message.errors, status: :unprocessable_entity }
@@ -22,11 +19,16 @@ class MessagesController < ApplicationController
     end
   end
 
-  def realtime_user_id
-    1
-  end
-
   private
+
+  def body
+    {
+        msg: @message.body,
+        time: @message.created_at.strftime("%Y/%m/%d - %H:%M:%S"),
+        userId: @message.user_id,
+        userName: params[:message][:user_name]
+    }
+  end
 
   def message_params
     params.require(:message).permit(:body, :user_id)
